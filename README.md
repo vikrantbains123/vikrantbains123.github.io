@@ -33,32 +33,6 @@ quality.
 Also coming soon: screen-recorded walkthroughs on AI, coding, and
 technology.
 
-## Repository contents
-
-| File | Purpose |
-| --- | --- |
-| `index.html` | The site itself — a single static page |
-| `profile.jpg` | Profile photo used on the page |
-| `LICENSE` | MIT license |
-
-This is a static site with no build step, served directly by GitHub
-Pages from the `main` branch.
-
-## Running locally
-
-Since it's a single static HTML file, no build tooling is required:
-
-```bash
-git clone https://github.com/vikrantbains123/vikrantbains123.github.io.git
-cd vikrantbains123.github.io
-open index.html   # or: python3 -m http.server, then visit localhost:8000
-```
-
-## Deployment
-
-Pushes to `main` are published automatically by GitHub Pages at
-https://vikrantbains123.github.io.
-
 ## Contact
 
 Links to GitHub, LinkedIn, and email are available in the sidebar of the
