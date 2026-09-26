@@ -15,7 +15,7 @@ quality.
 
 - **AI strategy & cost optimization** — routing by task complexity to
   reduce spend at scale
-- **Mobile engineering leadership** — team delivery, promotions, technical
+- **Mobile, SAAS engineering leadership** — team delivery, promotions, technical
   direction
 - **LLM evaluation & benchmarking** — hands-on testing of local and cloud
   models
