@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikrant Bains</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0F2438;
+    --bg-line: #1B3752;
+    --card: #14314C;
+    --ink: #EAF1F6;
+    --ink-dim: #8FA9BE;
+    --accent: #7FD1E0;
+    --accent-warm: #E8A54B;
+    --rule: rgba(127, 209, 224, 0.28);
+    --sidebar-w: 340px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .layout {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+  }
+
+  /* ---------- SIDEBAR (fixed, left) ---------- */
+  .sidebar {
+    width: var(--sidebar-w);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 48px 36px;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+      linear-gradient(var(--bg-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--bg-line) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .sidebar-top { display: flex; flex-direction: column; gap: 18px; }
+
+  .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-dim);
+  }
+
+  .portrait {
+    width: 84px;
+    height: 84px;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    object-fit: cover;
+    background: var(--card);
+  }
+
+  .sidebar h1 {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 4px 0 0;
+    letter-spacing: -0.01em;
+  }
+
+  .sidebar .tagline {
+    font-size: 16px;
+    color: var(--accent);
+    font-style: italic;
+    margin: 8px 0 0;
+    max-width: 30ch;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .sidebar-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ink-dim);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sidebar-nav a::before {
+    content: "";
+    width: 18px;
+    height: 1px;
+    background: var(--ink-dim);
+    transition: width 0.15s, background 0.15s;
+  }
+
+  .sidebar-nav a:hover { color: var(--accent); }
+  .sidebar-nav a:hover::before { width: 28px; background: var(--accent); }
+
+  .sidebar-bottom { display: flex; flex-direction: column; gap: 14px; }
+
+  .contact-row { display: flex; gap: 16px; }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    color: var(--ink-dim);
+    text-decoration: none;
+  }
+
+  .contact-item:hover { color: var(--accent); }
+  .contact-item svg { width: 19px; height: 19px; stroke: currentColor; fill: none; }
+
+  .sidebar-foot {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-dim);
+    letter-spacing: 0.04em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ---------- MAIN CONTENT ---------- */
+  .main {
+    flex: 1;
+    min-width: 0;
+    padding: 56px 64px 80px;
+  }
+
+  section { margin-bottom: 60px; scroll-margin-top: 24px; }
+
+  section h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ink-dim);
+    margin: 0 0 22px;
+  }
+
+  section h2::before { content: "— "; color: var(--accent); }
+
+  p { margin: 0 0 14px; color: var(--ink); max-width: 68ch; }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .focus-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 20px 22px;
+  }
+
+  .focus-card .name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .focus-card p { font-size: 15px; color: var(--ink-dim); margin: 0; }
+
+  .builds { display: flex; flex-direction: column; gap: 24px; }
+
+  .build { border-left: 2px solid var(--rule); padding-left: 20px; }
+
+  .build-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+
+  .build .name { font-size: 20px; font-weight: 500; }
+
+  .build .name a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .build .name a:hover { color: var(--accent); }
+
+  .build .status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent-warm);
+    letter-spacing: 0.04em;
+  }
+
+  .build p { margin-top: 6px; color: var(--ink-dim); font-size: 16px; }
+
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-dim);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 3px 8px;
+    letter-spacing: 0.02em;
+  }
+
+  ul.notes { list-style: none; padding: 0; margin: 0; }
+
+  ul.notes li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    max-width: 60ch;
+    color: var(--ink);
+  }
+
+  ul.notes li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .coming-soon {
+    border: 1px dashed var(--rule);
+    border-radius: 4px;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .coming-soon p { margin: 0; color: var(--ink-dim); font-size: 16px; }
+
+  .coming-soon .status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent-warm);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- MOBILE: stack sidebar above content ---------- */
+  @media (max-width: 900px) {
+    .layout { flex-direction: column; }
+    .sidebar {
+      width: 100%;
+      position: relative;
+      height: auto;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 28px 24px;
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+    }
+    .sidebar-nav { flex-direction: row; gap: 16px; margin-top: 0; }
+    .sidebar-nav a::before { display: none; }
+    .sidebar-bottom { flex-direction: row; align-items: center; gap: 16px; }
+    .sidebar-foot { display: none; }
+    .main { padding: 40px 24px 60px; }
+    .focus-grid { grid-template-columns: 1fr; }
+    .sidebar h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <img class="portrait" src="profile.jpg" alt="Vikrant Bains">
+        <div class="label">FIELD NOTES</div>
+        <h1>Vikrant Bains</h1>
+        <p class="tagline">Turning AI into measurable efficiency and revenue impact.</p>
+        <nav class="sidebar-nav">
+          <a href="#about">About</a>
+          <a href="#focus">Focus</a>
+          <a href="#building">Building</a>
+          <a href="#writing">Writing</a>
+          <a href="#connect">Connect</a>
+        </nav>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="contact-row">
+          <a class="contact-item" href="https://github.com/vikrantbains123" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          </a>
+          <a class="contact-item" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="contact-item" href="mailto:you@example.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          </a>
+        </div>
+        <div class="sidebar-foot">
+          <span>REV. 2026</span>
+          <span>SCALE 1:1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+      <section id="about">
+        <h2>ABOUT</h2>
+        <p>
+          I lead mobile engineering and applied-AI initiatives, with a focus on
+          evaluating open-weight versus frontier LLMs — finding the right
+          balance of cost, speed, and quality, then turning that into
+          practical, adoptable strategy for the org.
+        </p>
+        <p>
+          Outside of work, I tinker. Most of what's below started as a
+          weekend experiment before it turned into something worth sharing.
+        </p>
+      </section>
+
+      <section id="focus">
+        <h2>FOCUS AREAS</h2>
+        <div class="focus-grid">
+          <div class="focus-card">
+            <span class="name">AI Strategy &amp; Cost Optimization</span>
+            <p>Evaluating open vs. frontier LLMs and routing by task complexity to reduce AI spend at scale.</p>
+          </div>
+          <div class="focus-card">
+            <span class="name">Mobile Engineering Leadership</span>
+            <p>Leading a mobile engineering team — sprint delivery, promotion cases, and technical direction.</p>
+          </div>
+          <div class="focus-card">
+            <span class="name">LLM Evaluation &amp; Benchmarking</span>
+            <p>Hands-on benchmarking of cost, speed, and quality across local and cloud models.</p>
+          </div>
+          <div class="focus-card">
+            <span class="name">AI-Powered Developer Tools</span>
+            <p>Building CLI tools and agentic workflows on top of the Claude API — automating release notes, PR summaries, and other engineering busywork.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="building">
+        <h2>CURRENTLY BUILDING</h2>
+        <div class="builds">
+          <div class="build">
+            <div class="build-head">
+              <span class="name"><a href="https://github.com/vikrantbains123/ai-release-notes-pr-summarizer" target="_blank" rel="noopener">AI Release Notes &amp; PR Summarizer</a></span>
+              <span class="status">SHIPPED</span>
+            </div>
+            <p>A CLI tool that generates AI-written release notes and PR summaries for a GitHub repo over a date range, powered by the Claude API.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Claude API</span>
+              <span class="tag">CLI</span>
+            </div>
+          </div>
+          <div class="build">
+            <div class="build-head">
+              <span class="name">LLM Benchmark Tool</span>
+              <span class="status">IN PROGRESS</span>
+            </div>
+            <p>Benchmarking cost, speed, and quality across open-weight and frontier models — local via Ollama, and cloud APIs.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Ollama</span>
+              <span class="tag">Benchmarking</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="writing">
+        <h2>WRITING &amp; TALKS</h2>
+        <div class="coming-soon">
+          <p>A teaching channel on AI, coding, and technology — screen-recorded walkthroughs, starting with the release-notes tool build.</p>
+          <span class="status">COMING SOON</span>
+        </div>
+      </section>
+
+      <section id="exploring">
+        <h2>EXPLORING</h2>
+        <ul class="notes">
+          <li>Task-based routing between open and frontier models to cut AI costs at scale</li>
+          <li>Practical, low-effort ways to bring AI literacy into engineering teams</li>
+          <li>Turning side projects into teaching content</li>
+        </ul>
+      </section>
+
+      <section id="connect">
+        <h2>CONNECT</h2>
+        <p>Reach out via GitHub, LinkedIn, or email — links in the sidebar.</p>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>
