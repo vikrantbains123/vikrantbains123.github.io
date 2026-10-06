@@ -4,407 +4,499 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vikrant Bains</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+<meta name="description" content="Vikrant Bains, engineering leader across mobile, SaaS, and applied AI, focused on turning AI from experiments into measurable efficiency and revenue impact.">
+<link rel="canonical" href="https://vikrantbains123.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Vikrant Bains">
+<meta property="og:description" content="Engineering leader across mobile, SaaS, and applied AI. From AI pilots to proven ROI.">
+<meta property="og:url" content="https://vikrantbains123.github.io/">
+<meta property="og:image" content="https://vikrantbains123.github.io/profile.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vikrant Bains",
+  "jobTitle": "Engineering Leader",
+  "url": "https://vikrantbains123.github.io/",
+  "image": "https://vikrantbains123.github.io/profile.jpg",
+  "sameAs": [
+    "https://www.linkedin.com/in/vikrantbains",
+    "https://github.com/vikrantbains123"
+  ],
+  "knowsAbout": ["Engineering Leadership", "Mobile Engineering", "Applied AI", "LLM Evaluation", "AI Cost Optimization"]
+}
+</script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
   :root {
-    --bg: #0F2438;
-    --bg-line: #1B3752;
-    --card: #14314C;
-    --ink: #EAF1F6;
-    --ink-dim: #8FA9BE;
-    --accent: #7FD1E0;
-    --accent-warm: #E8A54B;
-    --rule: rgba(127, 209, 224, 0.28);
-    --sidebar-w: 340px;
+    --bg: #1B1E23;
+    --surface: #242830;
+    --ink: #F3F1EC;
+    --ink-2: #C3C6CB;
+    --ink-3: #8E949B;
+    --rule: #333841;
+    --accent: #E2B26A;
+    --glow: rgba(226, 178, 106, 0.10);
+  }
+  :root {
+    --serif: 'Newsreader', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --measure: 1240px;
   }
 
   * { box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  html, body {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
     margin: 0;
-    padding: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Newsreader', Georgia, serif;
-    font-size: 22px;
-    line-height: 1.6;
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
   }
+  a { color: inherit; }
+  ::selection { background: var(--accent); color: var(--bg); }
 
-  .layout {
-    display: flex;
-    min-height: 100vh;
-    align-items: stretch;
+  .wrap { max-width: var(--measure); margin: 0 auto; padding: 0 32px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s;
   }
+  header.scrolled { border-bottom-color: var(--rule); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .mark { font-family: var(--serif); font-size: 21px; font-weight: 500; text-decoration: none; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 30px; }
+  nav a { font-size: 14px; color: var(--ink-2); text-decoration: none; transition: color .15s; }
+  nav a:hover { color: var(--ink); }
 
-  .sidebar {
-    width: var(--sidebar-w);
-    flex-shrink: 0;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    padding: 48px 36px;
-    border-right: 1px solid var(--rule);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background:
-      linear-gradient(var(--bg-line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--bg-line) 1px, transparent 1px);
-    background-size: 28px 28px;
+  /* Hero */
+  .hero { padding: 64px 0 64px; background: radial-gradient(900px 420px at 18% 0%, var(--glow), transparent 70%); }
+  .hero-grid { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: stretch; }
+  .eyebrow {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 28px;
   }
-
-  .sidebar-top { display: flex; flex-direction: column; gap: 18px; }
-
-  .label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--ink-dim);
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(40px, 5.6vw, 68px);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    margin: 0 0 32px;
   }
-
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .intro { font-size: 19px; color: var(--ink-2); max-width: 60ch; margin: 0; }
+  .side { display: flex; flex-direction: column; gap: 20px; }
+  .side .who { display: flex; gap: 18px; align-items: center; }
+  .side .who strong { display: block; font-family: var(--serif); font-size: 22px; font-weight: 400; }
+  .side .who span { display: block; font-size: 14px; color: var(--ink-3); }
+  .side .who em { display: block; margin-top: 10px; font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.35; color: var(--accent); }
+  .now { box-shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 12px 32px -18px rgba(0,0,0,.45); background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 22px 24px; }
+  .now h2 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+  .now dl { margin: 0; display: grid; grid-template-columns: 92px 1fr; gap: 12px 14px; font-size: 15px; line-height: 1.45; }
+  .now dt { color: var(--ink-3); }
+  .now dd { margin: 0; color: var(--ink); }
   .portrait {
-    width: 140px;
-    height: 140px;
-    border-radius: 4px;
-    border: 1px solid var(--rule);
-    object-fit: cover;
-    background: var(--card);
+    width: 150px; height: 150px; object-fit: cover; flex-shrink: 0;
+    border-radius: 4px; border: 1px solid var(--rule);
+    box-shadow: 0 14px 30px -16px rgba(0,0,0,.6);
   }
 
-  .sidebar h1 {
-    font-size: 40px;
-    font-weight: 700;
-    margin: 4px 0 0;
-    letter-spacing: -0.01em;
+  /* Sections */
+  section.block { border-top: 1px solid var(--rule); padding: 56px 0; }
+  .block-grid { display: grid; grid-template-columns: 170px 1fr; gap: 48px; }
+  .block-label {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3); margin: 6px 0 0;
+    position: sticky; top: 100px; align-self: start;
+  }
+  .block-label span { color: var(--ink-3); margin-right: 10px; font-variant-numeric: tabular-nums; }
+  .prose { columns: 2; column-gap: 48px; }
+  .prose p { font-family: var(--serif); font-size: 21px; line-height: 1.5; font-weight: 300; margin: 0 0 18px; break-inside: avoid; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { font-weight: 500; }
+
+  /* Principles */
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .principle { border-top: 2px solid var(--accent); padding-top: 18px; }
+  .principle .n { display: block; font-family: var(--serif); font-size: 20px; color: var(--ink-3); font-style: italic; margin-bottom: 10px; }
+  .principle h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; line-height: 1.25; margin: 0 0 8px; }
+  .principle p { margin: 0; color: var(--ink-2); max-width: 56ch; }
+
+  /* Focus */
+  .focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 32px; }
+  .focus > div { border-top: 2px solid var(--accent); padding-top: 16px; }
+  .focus h3 { font-size: 15px; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.005em; }
+  .focus p { margin: 0; color: var(--ink-2); font-size: 16px; }
+
+  /* Work */
+  .work { list-style: none; margin: 0; padding: 0; }
+  .work li { border-bottom: 1px solid var(--rule); }
+  .work li:first-child { border-top: 1px solid var(--rule); }
+  .work a, .work .item {
+    display: grid; grid-template-columns: 1fr auto; gap: 8px 32px;
+    padding: 22px 0; text-decoration: none;
+  }
+  .work h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; line-height: 1.25; margin: 0; transition: color .15s; }
+  .work p { grid-column: 1; margin: 0; color: var(--ink-2); max-width: 60ch; }
+  .work .meta { grid-row: 1; grid-column: 2; font-size: 13px; color: var(--ink-3); white-space: nowrap; padding-top: 8px; }
+  .work .stack { grid-column: 1; font-size: 13px; color: var(--ink-3); margin-top: 4px; }
+  .work a:hover h3 { color: var(--accent); }
+  .work .arrow { display: inline-block; margin-left: 6px; transition: transform .2s; }
+  .work a:hover .arrow { transform: translate(3px, -3px); }
+
+  /* Contact */
+  .contact h2 {
+    font-family: var(--serif); font-weight: 300;
+    font-size: 28px; line-height: 1.25; letter-spacing: -0.02em;
+    margin: 0 0 20px; max-width: 26ch;
+  }
+  .contact .email {
+    font-family: var(--serif); font-size: 21px; color: var(--accent);
+    text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px;
+  }
+  .contact .email:hover { opacity: .75; }
+  .links { display: flex; gap: 28px; margin-top: 24px; }
+  .links a { font-size: 14px; color: var(--ink-2); text-decoration: none; }
+  .links a:hover { color: var(--ink); }
+
+  footer { border-top: 1px solid var(--rule); padding: 32px 0 48px; }
+  footer .wrap { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-3); }
+  footer .bar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; width: 100%; }
+  footer .bar > :last-child { justify-self: end; }
+  .quote { margin: 0; text-align: center; font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--ink-2); }
+  .quote cite { font-style: normal; font-family: var(--sans); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-left: 10px; white-space: nowrap; }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .focus { grid-template-columns: 1fr 1fr; }
+    .hero-grid { grid-template-columns: 1fr 320px; gap: 40px; }
+  }
+  @media (max-width: 860px) {
+    .wrap { padding: 0 20px; }
+    nav { gap: 18px; }
+    nav a.hide-sm { display: none; }
+    .hero { padding: 40px 0 48px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .prose { columns: 1; }
+    .principles { grid-template-columns: 1fr; gap: 28px; }
+    .block-grid { grid-template-columns: 1fr; gap: 20px; }
+    .block-label { position: static; }
+    section.block { padding: 44px 0; }
+    .prose p { font-size: 20px; }
+    .focus { grid-template-columns: 1fr 1fr; gap: 24px; }
+        .principle h3, .work h3 { font-size: 23px; }
+    .work a, .work .item { grid-template-columns: 1fr; }
+    .work .meta { grid-row: auto; grid-column: 1; padding-top: 0; order: -1; }
+    footer .bar { grid-template-columns: 1fr; text-align: center; gap: 12px; }
+    footer .bar > :last-child { justify-self: center; }
+    footer .bar .quote { order: -1; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  /* Philosophy */
+  .philosophy { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+  .philosophy li { padding: 22px 0 22px 22px; border-bottom: 1px solid var(--rule); position: relative; }
+  .philosophy li:nth-child(-n+2) { padding-top: 0; }
+  .philosophy li::before { content: ""; position: absolute; left: 0; top: 30px; width: 8px; height: 1px; background: var(--accent); }
+  .philosophy li:nth-child(-n+2)::before { top: 8px; }
+  .philosophy h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.3; margin: 0 0 6px; color: var(--ink); }
+  .philosophy p { margin: 0; color: var(--ink-2); font-size: 15px; }
+  @media (max-width: 860px) {
+    .philosophy { grid-template-columns: 1fr; }
+    .philosophy li:nth-child(2) { padding-top: 22px; }
+    .philosophy li:nth-child(2)::before { top: 30px; }
   }
 
-  .sidebar .tagline {
-    font-size: 20px;
-    color: var(--accent);
-    font-style: italic;
-    margin: 8px 0 0;
-    max-width: 30ch;
+  /* Domains */
+  .domains { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+  .domains li { padding: 26px 20px; display: flex; flex-direction: column; gap: 14px; border-left: 1px solid var(--rule); }
+  .domains li:first-child { border-left: 0; }
+  .domains svg { width: 26px; height: 26px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .domains span { font-family: var(--serif); font-size: 21px; color: var(--ink); line-height: 1.2; }
+  @media (max-width: 860px) {
+    .domains { grid-template-columns: 1fr 1fr; }
+    .domains li { border-left: 0; border-top: 1px solid var(--rule); }
+    .domains li:nth-child(-n+2) { border-top: 0; }
+    .domains li:nth-child(even) { border-left: 1px solid var(--rule); }
   }
 
-  .sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 12px;
-  }
+  /* Beyond work */
+  .life { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: start; }
+  .life p { font-family: var(--serif); font-size: 21px; line-height: 1.5; font-weight: 300; margin: 0 0 16px; }
+  .life p:last-child { margin-bottom: 0; }
+  .interests { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+  .interests li { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 15px; color: var(--ink-2); }
+  .interests svg { width: 18px; height: 18px; flex-shrink: 0; stroke: var(--accent); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  @media (max-width: 860px) { .life { grid-template-columns: 1fr; gap: 28px; } .life p { font-size: 19px; } }
 
-  .sidebar-nav a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    color: var(--ink-dim);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .sidebar-nav a::before {
-    content: "";
-    width: 18px;
-    height: 1px;
-    background: var(--ink-dim);
-    transition: width 0.15s, background 0.15s;
-  }
-
-  .sidebar-nav a:hover { color: var(--accent); }
-  .sidebar-nav a:hover::before { width: 28px; background: var(--accent); }
-
-  .sidebar-bottom { display: flex; flex-direction: column; gap: 14px; }
-
-  .contact-row { display: flex; gap: 16px; }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    color: var(--ink-dim);
-    text-decoration: none;
-  }
-
-  .contact-item:hover { color: var(--accent); }
-  .contact-item svg { width: 19px; height: 19px; stroke: currentColor; fill: none; }
-
-  .sidebar-foot {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: var(--ink-dim);
-    letter-spacing: 0.04em;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .main {
-    flex: 1;
-    min-width: 0;
-    padding: 56px 64px 80px;
-  }
-
-  section { margin-bottom: 60px; scroll-margin-top: 24px; }
-
-  section h2 {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: var(--ink-dim);
-    margin: 0 0 22px;
-  }
-
-  section h2::before { content: "— "; color: var(--accent); }
-
-  p { margin: 0 0 14px; color: var(--ink); max-width: 68ch; }
-
-  .focus-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .focus-card {
-    background: var(--card);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 20px 22px;
-  }
-
-  .focus-card .name {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    color: var(--accent);
-    letter-spacing: 0.02em;
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .focus-card p { font-size: 19px; color: var(--ink-dim); margin: 0; }
-
-  .builds { display: flex; flex-direction: column; gap: 24px; }
-
-  .build { border-left: 2px solid var(--rule); padding-left: 20px; }
-
-  .build-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-
-  .build .name { font-size: 26px; font-weight: 700; }
-
-  .build .name a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-  }
-
-  .build .name a:hover { color: var(--accent); }
-
-  .build .status {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--accent-warm);
-    letter-spacing: 0.04em;
-  }
-
-  .build p { margin-top: 6px; color: var(--ink-dim); font-size: 20px; }
-
-  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
-
-  .tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--ink-dim);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    padding: 3px 8px;
-    letter-spacing: 0.02em;
-  }
-
-  ul.notes { list-style: none; padding: 0; margin: 0; }
-
-  ul.notes li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
-    max-width: 60ch;
-    color: var(--ink);
-  }
-
-  ul.notes li::before {
-    content: "·";
-    position: absolute;
-    left: 4px;
-    color: var(--accent);
-    font-weight: 700;
-  }
-
-  .coming-soon {
-    border: 1px dashed var(--rule);
-    border-radius: 4px;
-    padding: 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .coming-soon p { margin: 0; color: var(--ink-dim); font-size: 20px; }
-
-  .coming-soon .status {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--accent-warm);
-    letter-spacing: 0.04em;
-  }
-
-  @media (max-width: 900px) {
-    .layout { flex-direction: column; }
-    .sidebar {
-      width: 100%;
-      position: relative;
-      height: auto;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 28px 24px;
-      border-right: none;
-      border-bottom: 1px solid var(--rule);
-    }
-    .sidebar-nav { flex-direction: row; gap: 16px; margin-top: 0; }
-    .sidebar-nav a::before { display: none; }
-    .sidebar-bottom { flex-direction: row; align-items: center; gap: 16px; }
-    .sidebar-foot { display: none; }
-    .main { padding: 40px 24px 60px; }
-    .focus-grid { grid-template-columns: 1fr; }
-    .sidebar h1 { font-size: 26px; }
-    .portrait { width: 96px; height: 96px; }
-  }
+  /* Gold section titles */
+  .block-label, .principle h3, .philosophy h3, .focus h3, .work h3, .now h2 { color: var(--accent); }
+  .contact h2 { color: var(--ink); }
+  .email-label { font-size: 14px; color: var(--ink-3); margin-right: 12px; letter-spacing: 0.02em; }
+  .block-label span, .principle .n { color: var(--ink-3); }
+  .work a:hover h3 { color: var(--ink); }
 </style>
 </head>
 <body>
-  <div class="layout">
-    <div class="sidebar">
-      <div class="sidebar-top">
-        <img class="portrait" src="profile.jpg" alt="Vikrant Bains">
-        <h1>Vikrant Bains</h1>
-        <p class="tagline">Turning AI into measurable efficiency and revenue impact.</p>
-        <nav class="sidebar-nav">
-          <a href="#about">About</a>
-          <a href="#focus">Focus</a>
-          <a href="#building">Building</a>
-          <a href="#writing">Writing</a>
-          <a href="#connect">Connect</a>
-        </nav>
+
+<header id="top">
+  <div class="wrap">
+    <a class="mark" href="#">Vikrant Bains</a>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#perspective" class="hide-sm">Perspective</a>
+      <a href="#philosophy" class="hide-sm">Philosophy</a>
+      <a href="#domains" class="hide-sm">Domains</a>
+      <a href="#work">Work</a>
+      <a href="#teaching" class="hide-sm">Teaching</a>
+      <a href="#life" class="hide-sm">Life</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Engineering Leadership · Mobile &amp; SaaS · Applied AI</p>
+        <h1>Turning AI from promising pilots into <em>proven returns</em>.</h1>
+        <p class="intro">I lead engineering teams and help organizations decide where AI earns its place. That means choosing the right model for each task, holding it to measurable outcomes, and building the systems that make it practical day to day.</p>
       </div>
-      <div class="sidebar-bottom">
-        <div class="contact-row">
-          <a class="contact-item" href="https://github.com/vikrantbains123" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.2 12.2 0 0 0-6.4 0C5.2 2.3 4.1 2.6 4.1 2.6a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 2.7 9c0 4.6 2.7 5.7 5.5 6-.4.4-.5.8-.5 1.5V21"/></svg>
-          </a>
-          <a class="contact-item" href="https://www.linkedin.com/in/vikrantbains" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a class="contact-item" href="mailto:vikrantbains@gmail.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-          </a>
+      <aside class="side">
+        <div class="who">
+          <img class="portrait" src="profile.jpg" alt="Vikrant Bains">
+          <div><strong>Vikrant Bains</strong><span>Engineering Leader</span><em>Leading with empathy.<br>Delivering with rigor.</em></div>
         </div>
-        <div class="sidebar-foot">
-          <span>REV. 2026</span>
-          <span>SCALE 1:1</span>
+        <div class="now">
+          <h2>Currently</h2>
+          <dl>
+            <dt>Leading</dt><dd>Mobile and SaaS engineering teams, and cross-functional AI initiatives</dd>
+            <dt>Building</dt><dd>Developer productivity, agentic workflows, and model evaluations</dd>
+            <dt>Domain</dt><dd>PropTech</dd>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>01</span>About</p>
+      <div class="prose">
+        <p>I've spent my career building software and the teams behind it. Today I lead mobile engineering and work across functions on AI initiatives, where my job is to <strong>separate what's impressive from what's valuable</strong>.</p>
+        <p>Much of that work comes down to judgment. When is an open-weight model good enough? When is a frontier model worth what it costs? How do you bring a team along without slowing delivery? I try to answer these questions with evidence rather than hype.</p>
+        <p>I also stay close to the code. I build my own tools, run my own benchmarks, and treat weekend experiments as a way to keep my opinions honest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="perspective">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>02</span>Perspective</p>
+      <div class="principles">
+        <div class="principle">
+          <div>
+            <h3>Measure before you scale.</h3>
+            <p>An AI initiative earns more investment when it shows gains in cost, speed, or revenue. A good demo isn't enough.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div>
+            <h3>Right-size the model to the task.</h3>
+            <p>Most work doesn't need the largest model. Routing by task complexity across open and frontier models is one of the most reliable ways to control AI spend at scale.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <div>
+            <h3>AI literacy is a leadership responsibility.</h3>
+            <p>Teams adopt what they understand. I favor small, practical habits that build that understanding over mandates and big programs.</p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="main">
-      <section id="about">
-        <h2>ABOUT</h2>
-        <p>
-          I am engineering leader working on traditional software development and enabling Engineering cross functional teams for AI initiatives, with a focus on evaluating open-weight vs. frontier models and building systems that make AI practical.
-        </p>
-        <p>
-          Outside of work, I tinker. Most of what's below started as a weekend experiment before it turned into something worth sharing.
-        </p>
-      </section>
+  <section class="block" id="philosophy">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>03</span>Philosophy</p>
+      <ul class="philosophy">
+        <li><h3>People first, then process, then tools.</h3><p>Great teams build great systems. I invest in the people before I optimize anything else.</p></li>
+        <li><h3>Clarity is a form of respect.</h3><p>Clear goals, honest feedback, and explicit expectations let people do their best work without guessing.</p></li>
+        <li><h3>Outcomes over output.</h3><p>Shipping more doesn't mean much on its own. What matters is moving the metrics that matter to customers and the business.</p></li>
+        <li><h3>Grow people beyond their current role.</h3><p>My job is to make my engineers ready for the next level, and to make sure they get the credit when they reach it.</p></li>
+        <li><h3>Ship small, learn fast.</h3><p>Short feedback loops beat long plans. Iterate in the open and let real usage guide the roadmap.</p></li>
+        <li><h3>Lead close to the work.</h3><p>I stay hands-on enough to ask the right questions, earn credibility, and spot problems early.</p></li>
+        <li><h3>Learn and be curious.</h3><p>I keep learning by building tools, benchmarking new models, and exploring ideas outside my comfort zone.</p></li>
+        <li><h3>Bias for action.</h3><p>Speed matters. Most decisions are reversible, so I make the call, take calculated risks, and adjust as we learn.</p></li>
+      </ul>
+    </div>
+  </section>
 
-      <section id="focus">
-        <h2>FOCUS AREAS</h2>
-        <div class="focus-grid">
-          <div class="focus-card">
-            <span class="name">AI Strategy &amp; Cost Optimization</span>
-            <p>Evaluating open vs. frontier LLMs and routing by task complexity to reduce AI spend at scale.</p>
-          </div>
-          <div class="focus-card">
-            <span class="name">Mobile Engineering Leadership</span>
-            <p>Leading a mobile engineering team — sprint delivery, promotion cases, and technical direction.</p>
-          </div>
-          <div class="focus-card">
-            <span class="name">LLM Evaluation &amp; Benchmarking</span>
-            <p>Hands-on benchmarking of cost, speed, and quality across local and cloud models.</p>
-          </div>
-          <div class="focus-card">
-            <span class="name">AI-Powered Developer Tools</span>
-            <p>Building CLI tools and agentic workflows on top of the Claude API — automating release notes, PR summaries, and other engineering busywork.</p>
-          </div>
+  <section class="block" id="focus">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>04</span>Focus</p>
+      <div class="focus">
+        <div>
+          <h3>AI strategy &amp; cost optimization</h3>
+          <p>Evaluating open-weight vs. frontier models and routing by task complexity to cut AI spend without losing quality.</p>
         </div>
-      </section>
-
-      <section id="building">
-        <h2>CURRENTLY BUILDING</h2>
-        <div class="builds">
-          <div class="build">
-            <div class="build-head">
-              <span class="name"><a href="https://github.com/vikrantbains123/ai-release-notes-pr-summarizer" target="_blank" rel="noopener">AI Release Notes &amp; PR Summarizer</a></span>
-              <span class="status">SHIPPED</span>
-            </div>
-            <p>A CLI tool that generates AI-written release notes and PR summaries for a GitHub repo over a date range, powered by the Claude API.</p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Claude API</span>
-              <span class="tag">CLI</span>
-            </div>
-          </div>
-          <div class="build">
-            <div class="build-head">
-              <span class="name">LLM Benchmark Tool</span>
-              <span class="status">IN PROGRESS</span>
-            </div>
-            <p>Benchmarking cost, speed, and quality across open-weight and frontier models — local via Ollama, and cloud APIs.</p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Ollama</span>
-              <span class="tag">Benchmarking</span>
-            </div>
-          </div>
+        <div>
+          <h3>Engineering leadership</h3>
+          <p>Leading SaaS and mobile teams: technical direction, predictable delivery, and growing engineers into their next role.</p>
         </div>
-      </section>
-
-      <section id="writing">
-        <h2>WRITING &amp; TALKS</h2>
-        <div class="coming-soon">
-          <p>A teaching channel on AI, coding, and technology — screen-recorded walkthroughs, starting with the release-notes tool build.</p>
-          <span class="status">COMING SOON</span>
+        <div>
+          <h3>Model evaluation</h3>
+          <p>Benchmarking cost, latency, and quality across local and cloud models, so model choices rest on data.</p>
         </div>
-      </section>
+        <div>
+          <h3>Developer productivity</h3>
+          <p>Building agentic workflows on the Claude API that remove engineering toil, from release notes to PR summaries.</p>
+        </div>
+        <div>
+          <h3>AI ethics &amp; governance</h3>
+          <p>Guardrails for responsible AI: clear usage policies, human oversight, transparency, and accountability.</p>
+        </div>
+        <div>
+          <h3>AI security</h3>
+          <p>Protecting AI systems and their data from prompt injection and leakage, with safe access and production integration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section id="exploring">
-        <h2>EXPLORING</h2>
-        <ul class="notes">
-          <li>Task-based routing between open and frontier models to cut AI costs at scale</li>
-          <li>Practical, low-effort ways to bring AI literacy into engineering teams</li>
+  <section class="block" id="domains">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>05</span>Domains</p>
+      <ul class="domains">
+        <li><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><span>PropTech</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg><span>Healthcare</span></li>
+        <li><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M10 9l5 2.5-5 2.5zM8 21h8"/></svg><span>Media Streaming</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h11L21 7H6.5"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg><span>E-commerce</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20v-7M10 20V9M15 20v-5M20 20V5"/></svg><span>Finance</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>06</span>Selected Work</p>
+      <ul class="work">
+        <li>
+          <a href="https://github.com/vikrantbains123/ai-release-notes-pr-summarizer" target="_blank" rel="noopener">
+            <h3>AI Release Notes &amp; PR Summarizer<span class="arrow">↗</span></h3>
+            <span class="meta">Released</span>
+            <p>A command-line tool that turns a repository's merged pull requests into clear release notes and summaries, powered by the Claude API.</p>
+            <span class="stack">Python · Claude API · GitHub</span>
+          </a>
+        </li>
+        <li>
+          <div class="item">
+            <h3>LLM Benchmark</h3>
+            <span class="meta">In progress</span>
+            <p>A harness for comparing cost, speed, and quality across open-weight models running locally and frontier models in the cloud. It's the evidence base for model-routing decisions.</p>
+            <span class="stack">Python · Ollama · Cloud LLM APIs</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="teaching">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>07</span>Teaching</p>
+      <ul class="work">
+        <li>
+          <div class="item">
+            <h3>AI Engineering Series</h3>
+            <span class="meta">Forthcoming</span>
+            <p>Recorded walkthroughs of building practical AI tools end to end, starting with the release-notes project.</p>
+            <span class="stack">Claude API · LLM evaluation · Agentic workflows</span>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <h3>Python Series</h3>
+            <span class="meta">Forthcoming</span>
+            <p>Practical Python for engineers, from writing clean, idiomatic code to building real command-line tools and automation.</p>
+            <span class="stack">Python · CLI tooling · Automation</span>
+          </div>
+        </li>
+        <li>
+          <div class="item">
+            <h3>AI Architecture &amp; System Design</h3>
+            <span class="meta">Forthcoming</span>
+            <p>Designing scalable, reliable systems, and the AI-native patterns layered on top of them: model routing, RAG, agents, and evaluation. It's taught the way design decisions actually get made on engineering teams.</p>
+            <span class="stack">AI architecture · Scalability · Trade-offs</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="life">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>08</span>Beyond Work</p>
+      <div class="life">
+        <div>
+          <p>I live in Southern California with my wife, our daughter, and an endlessly cheerful puppy who keeps us all moving.</p>
+          <p>Family comes first for me: weekend getaways, long dinners with friends, and the search for the next great place to eat. I also love staying active, so you'll often find me on the tennis court, out on a run, in the pool, or on my bike.</p>
+        </div>
+        <ul class="interests">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.6-9.5 9-9.5 9z"/></svg>Family time</li>
+          <li><svg viewBox="0 0 24 24"><path d="M2 16l20-8-6 13-3-6-6-2z"/></svg>Travel &amp; road trips</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 3v8a3 3 0 0 0 3 3v7M7 3v6M10 3v8a3 3 0 0 1-3 3M17 21V3c-2 1-3 4-3 8h3"/></svg>Food &amp; new restaurants</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6c3.5 3.5 3.5 9.3 0 12.8M18.4 5.6c-3.5 3.5-3.5 9.3 0 12.8"/></svg>Tennis</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="14" cy="4" r="2"/><path d="M8 21l3-6 3 2v5M6 12l3-3 4 1 3 3 3-1M11 15l-2-3"/></svg>Running</li>
+          <li><svg viewBox="0 0 24 24"><path d="M2 18c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 22c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><circle cx="16" cy="7" r="2"/><path d="M5 14l5-5 3 3 3-2"/></svg>Swimming</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17 9 9h6l3.5 8M9 9 12 17h-1M14 6h2l-1 3"/></svg>Cycling</li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>SoCal outdoors</li>
         </ul>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section id="connect">
-        <h2>CONNECT</h2>
-        <p>Reach out via <a href="https://github.com/vikrantbains123" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.linkedin.com/in/vikrantbains/" target="_blank" rel="noopener">LinkedIn</a>, or <a href="mailto:vikrantbains@gmail.com">email</a>.</p>
-      </section>
+  <section class="block contact" id="contact">
+    <div class="wrap block-grid">
+      <p class="block-label"><span>09</span>Contact</p>
+      <div>
+        <h2>Always glad to talk engineering leadership and applied AI.</h2>
+        <p style="margin:0"><span class="email-label">Email</span><a class="email" href="mailto:vikrantbains@gmail.com">vikrantbains@gmail.com</a></p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/vikrantbains" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/vikrantbains123" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="bar">
+      <span>© 2026 Vikrant Bains</span>
+      <p class="quote">“Leadership is not about being in charge. It is about taking care of those in your charge.”<cite>— Simon Sinek</cite></p>
+      <a href="#top" style="text-decoration:none">Back to top ↑</a>
     </div>
   </div>
+</footer>
+
+<script>
+  const h = document.querySelector('header');
+  const onScroll = () => h.classList.toggle('scrolled', window.scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+</script>
 </body>
 </html>
